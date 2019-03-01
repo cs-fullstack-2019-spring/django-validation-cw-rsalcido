@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<h1>Vehicle</h1>
+
+
+<hr>
+<ul>
+    {% for eachCar in allCars %}
+    <li>{{eachCar.make}}</li>
+    {% endfor %}
+</ul>
+<!--cas that are being entered-->
+<h3> Vehicle Database</h3>
+<hr>
+<form action="{% url 'index' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Submit</button>
+</form>
+</body>
+</html>
